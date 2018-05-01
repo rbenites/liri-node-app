@@ -1,1 +1,67 @@
 
+
+--------------------------
+This Shows the last 20 Twitter results from groupBRCA
+
+This is Tweet 1 of 3
+Tweet: Pandas file a class action lawsuit against Panda Express. Claims are about the US company watering down their brand… https://t.co/lfHO1IHPLH
+Created on: Wed Apr 25 23:08:53 +0000 2018
+--------------------------
+
+This is Tweet 2 of 3
+Tweet: A woman in LA recently got fed up with the amount of Tesla's on the road. She claims they're are making her Prius l… https://t.co/WHBYNOkhNr
+Created on: Wed Apr 25 23:06:06 +0000 2018
+--------------------------
+
+This is Tweet 3 of 3
+Tweet: Warhammer Stock Plummets After an employee by the name of Omar burns down warehouse. If it weren't for the stuffed… https://t.co/xGofl3UIiD
+Created on: Wed Apr 25 22:59:57 +0000 2018
+--------------------------
+
+--------------------------
+This is a new Spotify Search
+
+Track Name: Tool Box
+Preview URL: https://p.scdn.co/mp3-preview/ba5ba6cd2de20fe3eb832829da3d6e2dae0991ce?cid=988cd97094424c4dada266a9555d567d
+Artist: Tool No. 4 (Forty Six & 2)
+Album: Tool Box
+Title: Star Wars: The Last Jedi
+Year Released: 2017
+IMDB Rating: 7.4/10
+Rotten Tomatoes Rating: 91%
+Country: USA
+Language: English
+Plot: Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares for battle with the First Order.
+Actors: Mark Hamill, Carrie Fisher, Adam Driver, Daisy Ridley
+--------------------------
+This is a new Movie Search
+
+Title: Star Wars: The Last Jedi
+Year Released: 2017
+IMDB Rating: 7.4/10
+Rotten Tomatoes Rating: 91%
+Country: USA
+Language: English
+Plot: Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares for battle with the First Order.
+Actors: Mark Hamill, Carrie Fisher, Adam Driver, Daisy Ridley
+--------------------------
+This is a new Spotify Search
+
+Track Name: Weezer (Deluxe Edition)
+Artist: Say It Ain't So
+Preview URL: null
+Album: Weezer (Deluxe Edition)
+--------------------------
+This is a new Spotify Search
+
+Artist: Say It Ain't So
+Track Name: Weezer (Deluxe Edition)
+Preview URL: null
+Album: Weezer (Deluxe Edition)
+--------------------------
+This is a new Spotify Search
+
+Artist: Say It Ain't So
+Track Name: Weezer (Deluxe Edition)
+Preview URL: null
+Album: Weezer (Deluxe Edition)

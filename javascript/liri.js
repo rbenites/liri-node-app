@@ -74,32 +74,32 @@ function brcaTweets() {
         }
         //console.log("out of if in " + action);
         console.log(formating);
-        fs.appendFile('../log.txt', "\n--------------------------\nThis Shows the last 20 Twitter results from groupBRCA\n", function (err) {
+        fs.appendFileSync('../log.txt', "\n--------------------------\nThis Shows the last 20 Twitter results from groupBRCA\n", function (err) {
             if (err) throw err;
         });
         for (var i = 0; i < tweets.length; i++) {
             //console.log("in the for of " + action);
             var data = tweets[i];
             console.log("Username: " + data.user.name);
-            console.log("This is Tweet "+[i+1]+" of "+tweets.length);
+            console.log("This is Tweet " + [i + 1] + " of " + tweets.length);
             console.log("Tweet: " + data.text);
             console.log("Created on: " + data.created_at);
             console.log(formating);
 
             //this logs the search to the log file
-            fs.appendFile('../log.txt', "\nThis is Tweet "+[i+1]+" of "+tweets.length, function (err) {
-                if (err) throw err;
-            });            
-            fs.appendFile('../log.txt', "\nTweet: " + data.text, function (err) {
+            fs.appendFileSync('../log.txt', "\nThis is Tweet " + [i + 1] + " of " + tweets.length, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nCreated on: " + data.created_at, function (err) {
+            fs.appendFileSync('../log.txt', "\nTweet: " + data.text, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\n--------------------------\n", function (err) {
+            fs.appendFileSync('../log.txt', "\nCreated on: " + data.created_at, function (err) {
                 if (err) throw err;
             });
-            console.log("Search saved to log.txt");
+            fs.appendFileSync('../log.txt', "\n--------------------------\n", function (err) {
+                if (err) throw err;
+            });
+            console.log("\nSearch saved to log.txt");
         }
     });
 }
@@ -113,7 +113,7 @@ function spotifyThisSong(song) {
             limit: 20
         })
         .then(function (response) {
-            
+
             console.log(formating);
             //Artist name
             console.log("Artist: " + response.tracks.items[0].name);
@@ -125,22 +125,22 @@ function spotifyThisSong(song) {
             console.log("Album: " + response.tracks.items[0].album.name);
 
             //this logs the Search to log the file
-            fs.appendFile('../log.txt', "\n--------------------------\nThis is a new Spotify Search\n", function (err) {
+            fs.appendFileSync('../log.txt', "\n--------------------------\nThis is a new Spotify Search\n", function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nArtist: "+ response.tracks.items[0].name, function (err) {
+            fs.appendFileSync('../log.txt', "\nArtist: " + response.tracks.items[0].name, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nTrack Name: " + response.tracks.items[0].album.name, function (err) {
+            fs.appendFileSync('../log.txt', "\nTrack Name: " + response.tracks.items[0].album.name, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nPreview URL: " + response.tracks.items[0].preview_url, function (err) {
+            fs.appendFileSync('../log.txt', "\nPreview URL: " + response.tracks.items[0].preview_url, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nAlbum: " + response.tracks.items[0].album.name, function (err) {
+            fs.appendFileSync('../log.txt', "\nAlbum: " + response.tracks.items[0].album.name, function (err) {
                 if (err) throw err;
             });
-            console.log("Search saved to log.txt");
+            console.log("\nSearch saved to log.txt");
         })
         .catch(function (err) {
             console.log(err);
@@ -156,68 +156,44 @@ function movieThis(movie) {
         } else {
             console.log(formating);
             console.log("Title: " + JSON.parse(body).Title);
-            fs.appendFile('../log.txt', "\nTitle: " + JSON.parse(body).Title, function (err) {
-                if (err) throw err;
-            });
             console.log("Year Released: " + JSON.parse(body).Year);
-            fs.appendFile('../log.txt', "\nYear Released: " + JSON.parse(body).Year, function (err) {
-                if (err) throw err;
-            });
             console.log("IMDB Rating: " + JSON.parse(body).Ratings[0].Value);
-            fs.appendFile('../log.txt', "\nIMDB Rating: " + JSON.parse(body).Ratings[0].Value, function (err) {
-                if (err) throw err;
-            });
             console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value);
-            fs.appendFile('../log.txt', "\nRotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value, function (err) {
-                if (err) throw err;
-            });
             console.log("Country: " + JSON.parse(body).Country);
-            fs.appendFile('../log.txt', "\nCountry: " + JSON.parse(body).Country, function (err) {
-                if (err) throw err;
-            });
             console.log("Language: " + JSON.parse(body).Language);
-            fs.appendFile('../log.txt', "\nLanguage: " + JSON.parse(body).Language, function (err) {
-                if (err) throw err;
-            });
             console.log("Plot: " + JSON.parse(body).Plot);
-            fs.appendFile('../log.txt', "\nPlot: " + JSON.parse(body).Plot, function (err) {
-                if (err) throw err;
-            });
             console.log("Actors: " + JSON.parse(body).Actors);
-            fs.appendFile('../log.txt', "\nActors: " + JSON.parse(body).Actors, function (err) {
-                if (err) throw err;
-            });
             console.log(formating);
 
-             //this logs the Search to log the file
-             fs.appendFile('../log.txt', "\n--------------------------\nThis is a new Movie Search\n", function (err) {
+            //this logs the Search to log the file
+            fs.appendFileSync('../log.txt', "\n--------------------------\nThis is a new Movie Search\n", function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nTitle: " + JSON.parse(body).Title, function (err) {
+            fs.appendFileSync('../log.txt', "\nTitle: " + JSON.parse(body).Title, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nYear Released: " + JSON.parse(body).Year, function (err) {
+            fs.appendFileSync('../log.txt', "\nYear Released: " + JSON.parse(body).Year, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nIMDB Rating: " + JSON.parse(body).Ratings[0].Value, function (err) {
+            fs.appendFileSync('../log.txt', "\nIMDB Rating: " + JSON.parse(body).Ratings[0].Value, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nRotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value, function (err) {
+            fs.appendFileSync('../log.txt', "\nRotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nCountry: " + JSON.parse(body).Country, function (err) {
+            fs.appendFileSync('../log.txt', "\nCountry: " + JSON.parse(body).Country, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nLanguage: " + JSON.parse(body).Language, function (err) {
+            fs.appendFileSync('../log.txt', "\nLanguage: " + JSON.parse(body).Language, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nPlot: " + JSON.parse(body).Plot, function (err) {
+            fs.appendFileSync('../log.txt', "\nPlot: " + JSON.parse(body).Plot, function (err) {
                 if (err) throw err;
             });
-            fs.appendFile('../log.txt', "\nActors: " + JSON.parse(body).Actors, function (err) {
+            fs.appendFileSync('../log.txt', "\nActors: " + JSON.parse(body).Actors, function (err) {
                 if (err) throw err;
             });
-            console.log("Search saved to log.txt");
+            console.log("\nSearch saved to log.txt");
         }
     });
 }
@@ -225,10 +201,10 @@ function movieThis(movie) {
 function doWhatItSays() {
     // This is where I will respond to do-what-it-says
     // pull the search info from the random.txt file
-    fs.readFile('random.txt', "utf8", function (err, data) {
+    fs.readFile('../random.txt', "utf8", function (err, data) {
         responseArr = data.split(',');
         action = responseArr[0];
-        search = responseArr[1];
+        query = responseArr[1];
         runMe(action);
     });
 }
