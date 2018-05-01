@@ -1,9 +1,9 @@
 /*========REQUIRE=======*/
-require("dotenv").config();
+require("dotenv").config({path: '../.env'});
 //code for importing NPMs
 var keys = require("./keys.js");
 var Twitter = require("twitter");
-//var Spotify = require("node-spotify-api");
+var Spotify = require("node-spotify-api");
 var jsonfile = require("jsonfile");
 var request = require('request');
 //enables read/write to file system
@@ -11,7 +11,7 @@ var fs = require("fs");
 
 /*========KEYS=======*/
 //Store keys in Var
-//var spotify = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
 /*========INPUT VARS=======*/
@@ -64,15 +64,15 @@ function runMe(action) {
 }
 
 function brcaTweets() {
-    console.log("You are in " + action);
+    //console.log("You are in " + action);
     var params = {
         screen_name: 'groupBRCA'
     };
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
         if (!error && response.statusCode === 200) {
-            console.log("in if of " + action);
+            //console.log("in if of " + action);
         }
-        console.log("out of if in " + action);
+        //console.log("out of if in " + action);
         console.log(formating);
 //not sure why this for loop won't run
         for (var i = 0; i < tweets.length; i++) {
@@ -86,13 +86,12 @@ function brcaTweets() {
     });
 }
 
-//not sure why the spotify portion won't run
 function spotifyThisSong(song) {
-    console.log("You are in " + action);
+   // console.log("You are in " + action);
     spotify
         .search({
             type: 'track',
-            search: song,
+            query: song,
             limit: 20
         })
         .then(function (response) {
@@ -109,7 +108,6 @@ function spotifyThisSong(song) {
         .catch(function (err) {
             console.log(err);
         });
-
 }
 
 function movieThis(movie) {
