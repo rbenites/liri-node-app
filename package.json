@@ -2,7 +2,7 @@
   "name": "liri-node-app",
   "version": "1.0.0",
   "description": "LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.",
-  "main": "index.js",
+  "main": "liri.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,11 +10,23 @@
     "type": "git",
     "url": "git+https://github.com/rbenites/liri-node-app.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "twitter",
+    "spotify",
+    "OMDB"
+  ],
+  "author": "RB",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rbenites/liri-node-app/issues"
   },
-  "homepage": "https://github.com/rbenites/liri-node-app#readme"
+  "homepage": "https://github.com/rbenites/liri-node-app#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "jsonfile": "^4.0.0",
+    "node-spotify-api": "^1.0.7",
+    "npm": "^6.0.0",
+    "request": "^2.85.0",
+    "twitter": "^1.7.1"
+  }
 }
